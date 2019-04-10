@@ -1,22 +1,3 @@
-# fileServer
-Adobe homework project
-
-the purpose to do file system operations using web interface.
-
-In order to start this you need to open the project with your IDE (I used Intellij to develop)
-Right now 4 HTTP methods are implemented: GET, POST, PUT, DELETE
-GET:
-POST:
-PUT:
-DELETE:
-
-to run:
-in the root directory: mvn clean install
-java -cp target/fileserver-1.0-SNAPSHOT.jar Main <port> <serverhome>
-ex: java -cp target/fileserver-1.0-SNAPSHOT.jar Main 5000 C:\Users\ccostea\Desktop\fileServer-master\target
-  
-  
-  
 Project Title
 Java ThreadPooling File Server
 
@@ -39,6 +20,7 @@ in root directory of the project: mvn clean install
 java -cp target/fileserver-1.0-SNAPSHOT.jar Main <PORT> <SERVER_HOME>
 <PORT> The port that will be used by the server (check if that port is used by another process)
 <SERVER_HOME> Filepath of the directory where the clients will have access to write or get files
+Right now you need to provide the absolute path in order to work
  
 eg: java -cp target/fileserver-1.0-SNAPSHOT.jar Main 5000 C:\Users\user\Desktop\fileServer-master\target
 
@@ -55,27 +37,27 @@ eg: python /src/test/testApi.py 5000 C:\Users\user\Desktop\fileServerHomework
 
 
 Deployment
-Add additional notes about how to deploy this on a live system
+Docker setup is present in /dockerContainer
+In order to work you need to update this with your new SERVER_HOME absolute path
 
 Built With
-Dropwizard - The web framework used
+Intellij IDEA - IDE
 Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
+I used github as repository and git bash as versioning tool
 
 Authors
 Costin-Valeriu Costea
-See also the list of contributors who participated in this project.
 
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc
+Sources
+http://tutorials.jenkov.com/java-multithreaded-servers/thread-pooled-server.html
+https://gist.github.com/vagmi/7168756
+https://stackoverflow.com/questions/35983807/java-httpserver-handling-post-requests-and-read-the-html-form-information
+https://dzone.com/articles/run-simple-jar-application-in-docker-container-1
+https://github.com/marius-avram/http-thread-pooling-server
+
+Fingers Crossed! :) 
