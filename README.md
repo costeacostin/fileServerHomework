@@ -7,7 +7,7 @@ are present on the server.
 The client should build the request with:
 PATH: <SERVER_IP>:<SERVER_PORT>/<FILE_PATH>
 METHOD: GET | POST | PUT | DELETE
-KEEP_ALIVE: YES/NO
+KEEP_ALIVE: YES/NO (Keep Alive behaviour was implemented with setSocketTimeout(10 seconds))
 In this moment the concurency of paralel request processing threads is implemented using ThreadPoolExecutor that have 10 Threads.
 In order to organize thread access to files I implemented a ConcurrentHashMap where I mark when a file is used or not
 in order to access a resource without having the problem that another thread is doing operations on it.
