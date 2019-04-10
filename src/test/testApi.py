@@ -5,6 +5,7 @@ import os
 
 #This test check if the fileserver is working
 #TODO: Check files and body content. Run multiple requests in separate threads in order to see concurency behaviour
+#TODO: Test keep-alive with time of connections
 if len(sys.argv) == 4:
     print ('Python API tester for Java fileServer')
     print sys.argv
