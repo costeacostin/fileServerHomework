@@ -51,7 +51,7 @@ Authors
 Costin-Valeriu Costea
 
 License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+OpenSource
 
 Sources
 http://tutorials.jenkov.com/java-multithreaded-servers/thread-pooled-server.html
