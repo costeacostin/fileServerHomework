@@ -1,0 +1,6 @@
+
+FROM java:8
+WORKDIR /target
+ADD fileserver-1.0-SNAPSHOT.jar fileserver-1.0-SNAPSHOT.jar
+EXPOSE 8080
+CMD java - jar HelloWorld.jar 5000 C:\Users\user\Desktop\fileServerHomework
