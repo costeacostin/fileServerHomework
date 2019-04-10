@@ -5,15 +5,19 @@ import os
 
 #This test check if the fileserver is working
 #TODO: Check files and body content. Run multiple requests in separate threads in order to see concurency behaviour
-if len(sys.argv) == 3:
+if len(sys.argv) == 4:
     print ('Python API tester for Java fileServer')
-    hostUrl = 'http://localhost:' + sys.argv[1]
+    print sys.argv
+    serverIp = sys.argv[1]
+    serverPort = sys.argv[2]
+    serverHome = sys.argv[3]
+    hostUrl = 'http://' + serverIp + ':' + serverPort
 
     createdFiles = []
 
     #STEP 1 Test GET method on a file that not exist
     randomFile = 'dir1/dir2/file' + str(random.randint(1,100000)) + '.txt'
-    fullPath = sys.argv[2] + "/" + randomFile
+    fullPath = serverHome + "/" + randomFile
     print 'STEP 1 Test GET method on a file that not exist'
     resp = requests.get(hostUrl + '/' + randomFile)
     if resp.status_code == 404:
@@ -56,4 +60,4 @@ if len(sys.argv) == 3:
 
 
 else:
-    print ('Program arguments not provided <port> <ServerPath>')
+    print ('Program arguments not provided <ip> <port> <ServerPath>')

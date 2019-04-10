@@ -5,6 +5,7 @@ public class StringsHelpers {
     public static final String ERROR_CLOSING_SERVER_EXCEPTION ="Error closing server";
     public static final String ERROR_USAGE_OF_SERVICE = "Usage: java FileServer <port> <home>";
     public static final String ERROR_DELETE_FAILED = "Delete operation is failed.";
+    public static final String ERROR_SERVER_HOME_INVALID = "Provided server home path is not valid";
     public static final String INFO_SERVER_STARTED = "Server started on port ";
     public static final String INFO_SERVER_STOPPED ="Server Stopped.";
     public static final String ERROR_ACCEPT_CLIENT_CONN = "Error accepting client connection";

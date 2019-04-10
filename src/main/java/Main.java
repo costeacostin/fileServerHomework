@@ -2,6 +2,8 @@ import helpers.HTTPServerHelper;
 import helpers.StringsHelpers;
 import server.ThreadPooledServer;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,9 +13,16 @@ public class Main {
 
     public static void main(String[] args) {
         readProgramParams(args);
-        ThreadPooledServer server = new ThreadPooledServer(HTTPServerHelper.port);
-        Thread serverThread = new Thread(server);
-        serverThread.start();
+        File f = new File(HTTPServerHelper.fileHome);
+        if (f.exists() && f.isDirectory()) {
+            ThreadPooledServer server = new ThreadPooledServer(HTTPServerHelper.port);
+            Thread serverThread = new Thread(server);
+            serverThread.start();
+        }
+        else{
+            logger.log(Level.SEVERE, StringsHelpers.ERROR_SERVER_HOME_INVALID);
+            System.exit(-1);
+        }
     }
 
     //read program arguments (port and fileHome of File server)
