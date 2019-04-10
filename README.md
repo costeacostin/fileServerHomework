@@ -17,8 +17,8 @@ For Developers: To write this project I used IntellijIDEA but any IDE that suppo
 For Users: Install a version of Java that is >= Java 8 (JDK)
 In order to run the server you need to:
 in root directory of the project: mvn clean install 
-java -cp target/fileserver-1.0-SNAPSHOT.jar Main <PORT> <SERVER_HOME>
-<PORT> The port that will be used by the server (check if that port is used by another process)
+java -cp target/fileserver-1.0-SNAPSHOT.jar Main <SERVER_PORT> <SERVER_HOME>
+<SERVER_PORT> The port that will be used by the server (check if that port is used by another process)
 <SERVER_HOME> Filepath of the directory where the clients will have access to write or get files
 Right now you need to provide the absolute path in order to work
  
@@ -28,12 +28,12 @@ eg: java -cp target/fileserver-1.0-SNAPSHOT.jar Main 5000 C:\Users\user\Desktop\
 
 Running the tests
 This project was tested using a python service that is present in /src/test/testApi.py
-This test service should be run after the server was started with <PORT> and <SERVER_HOME> arguments
+This test service should be run after the server was started with <SERVER_IP> <SERVER_PORT> and <SERVER_HOME> arguments
 The purpose of it is to check if the requests are processed well by the server, files are returned, created
 Until now I tested the server only on Windows environment using Google Chrome browser and Postman application
 In order to run the testing service you need to install Python (I tested with 2.7 version) and requests python module
 
-eg: python /src/test/testApi.py 5000 C:\Users\user\Desktop\fileServerHomework
+eg: python /src/test/testApi.py localhost 5000 C:\Users\user\Desktop\fileServerHomework
 
 
 Deployment
